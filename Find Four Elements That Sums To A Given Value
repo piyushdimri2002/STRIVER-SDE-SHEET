@@ -1,0 +1,37 @@
+/* 
+APPROACH:
+1) SORT
+2) RUN 2 LOOPS for i and j where j=i+1
+3) set k=j+1 and l= n-1
+4) run while loop until k<l 
+5) calculate sum 
+        if sum = target return yes
+        if sum < target k++
+        if sum > target l--
+
+*/
+
+/* CODE */
+
+string fourSum(vector<int> arr, int target, int n) {
+    sort(arr.begin(),arr.end());
+    int i,j,k,l;
+    int sum=0;
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            k=j+1;
+            l=n-1;
+            while(k<l){
+                sum=arr[i]+arr[j]+arr[k]+arr[l];
+                if(sum==target)
+                return "Yes";
+                else if(sum<target)
+                k++;
+                else
+                l--;
+            }
+        }
+    }
+    return "No";
+}
+
