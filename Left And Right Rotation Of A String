@@ -1,0 +1,16 @@
+#include <bits/stdc++.h> 
+string leftRotate(string str, int d) {
+    int size = str.length();
+
+    d=d%size;
+
+    return str.substr(d)+str.substr(0,d);
+}
+
+string rightRotate(string str, int d) {
+    int size = str.length();
+
+    d=d%size;
+
+    return str.substr(size-d)+str.substr(0,size-d);
+}
