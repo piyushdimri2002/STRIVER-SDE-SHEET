@@ -1,0 +1,19 @@
+#include <bits/stdc++.h> 
+string encode(string &message)
+{
+    string str;
+    
+    int n=message.size(),i=0;
+    while(i<n){
+        int count=1;
+        str+=message[i];
+        int j=i+1;
+        while(j<n && message[j]==message[i]){
+            count++;
+            j++;
+        }
+        str+=to_string(count);
+        i+=count;
+    }
+    return str;
+}
